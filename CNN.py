@@ -10,7 +10,7 @@ from keras.models import Model
 from keras.layers import Input, Reshape
 from keras.layers import Conv2D, MaxPooling2D, Conv2DTranspose
 
-def CNN(input_shape):
+def FCN(input_shape):
 
     ''' Layers '''
     input_img = Input(input_shape)
@@ -28,6 +28,6 @@ def CNN(input_shape):
     reshaped_out = Reshape((input_shape[0]*input_shape[0],-1))(out)
 
     ''' Creation of Model '''
-    CNN_model = Model(input_img,reshaped_out)
+    FCN_model = Model(input_img,reshaped_out)
     
-    return CNN_model
+    return FCN_model
